@@ -1,0 +1,18 @@
+.container {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  }
+  
+.container h1 {
+  width: 10em;
+  text-align: center;
+  font-size: 50px;
+  letter-spacing: 2px;
+  font-weight: 800;
+  opacity: 0; /* Initial opacity set to 0 */
+}
+
+
+
