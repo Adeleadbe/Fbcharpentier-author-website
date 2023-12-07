@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from "yup"
 import { submitFormData } from "./SubmitFormData"
+import styles from "./contact_form.module.css"
 
 const schema = yup.object().shape({
     lastName: yup.string().required("Le prénom est requis"),
@@ -33,19 +34,16 @@ const ContactForm = () => {
 
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
-            <label htmlFor="lastName">Prénom</label>
-            <input type="text" id="lastName" placeholder="Prénom" {...register("lastName")} autoComplete="given-name" />
+            <input type="text" id="lastName" className={styles.input_field} placeholder="Prénom" {...register("lastName")} autoComplete="given-name" />
             <p>{errors.lastName?.message}</p>
 
-            <label htmlFor="email">Email</label>
-            <input type="text" id="email" placeholder="Email" {...register("email")} autoComplete="email" />
+            <input type="text" id="email" className={styles.input_field} placeholder="Email" {...register("email")} autoComplete="email" />
             <p>{errors.email?.message}</p>
 
-            <label htmlFor="message">Message</label>
-            <textarea id="message" placeholder="Message" {...register("message")} autoComplete="off" />
+            <textarea id="message" className={styles.input_field_message} placeholder="Message" {...register("message")} autoComplete="off" />
             <p>{errors.message?.message}</p>
 
-            <button type="submit">Envoyer</button>
+            <button className={styles.input_field_button} type="submit">Envoyer</button>
         </form>
     )
 }

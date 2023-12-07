@@ -1,0 +1,25 @@
+.input_field, .input_field_message {
+    width: 100%;
+    padding: 11px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 18px;
+}
+
+.input_field_message {
+    height: 150px;
+}
+
+.input_field:focus, .input_field_message:focus {
+    outline-style: none;
+}
+
+.input_field_button {
+    padding: 8px 12px;
+    font-size: 20px;
+    background-color: rgb(255, 255, 255, 100%); /* Remplacez cela par votre couleur préférée */
+    color: rgb(43, 108, 130); /* Couleur du texte du bouton, remplacez-le par la couleur de texte souhaitée */
+    border: none; /* Supprime la bordure du bouton */
+    cursor: pointer; /* Ajoute un curseur pointer au survol */
+}

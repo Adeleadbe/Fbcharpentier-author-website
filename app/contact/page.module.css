@@ -10,7 +10,7 @@
     flex-direction: column;
     padding-left: 30%;
     padding-right: 30%;
-    z-index: -1;
+    z-index: 0;
 }
 
 .contact h1 {
