@@ -1,42 +1,79 @@
 .button {
-    display: inline-block;
-    padding: 15px 20px;
-    font-size: 24px;
-    color: #ffffff;
-    border: #B0F4B9;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bolder;
-    margin-top: 17px;
-    margin-right: 10px;
-    margin-left: 15px;
-    margin-bottom: 70px;
-    width: 180px;
-    height: 65px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    text-shadow: #0f5f19 1px 1px 0.5px;
-    font-weight: 900;
-  }
+  display: inline-block;
+  padding: 15px 40px 15px 20px;
+  font-size: 27px;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bolder;
+  margin-top: 40px;
+  margin-left: 25px;
+  margin-bottom: 70px;
+  height: 65px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  text-shadow: #0f5f19 1px 1px 0.5px;
+  font-weight: 900;
+  transition: background-color 0.4s ease;
+}
 
-  .button::before {
-    content: '';
-    background-color: #B0F4B9;
-    width: 140px;
-    height: 65px;
-    border-radius: 50px;
-    position: absolute;
-    top: 2px;
-    left: 0; /* Ajuster le positionnement du cercle sur les deux premières lettres */
-    z-index: -1;
-    transform: scaleX(0.5); /* Initialiser la largeur du cercle à 0 */
-    transform-origin: left; /* Transformation à partir de la gauche */
-    transition: transform 0.3s ease-in-out; /* Animation fluide */
+.button::before {
+  content: '';
+  background-color: #B0F4B9;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  position: absolute;
+  top: 50%;
+  left: 0; /* Initial position à gauche de l'élément parent */
+  transform: translateY(-50%);
+  z-index: -1;
+  transition: border-radius 0.4s ease-in-out;
 }
 
 .button:hover::before {
-    transform: scaleX(2); /* Au survol, agrandir le cercle pour recouvrir le texte */
-     /* Ajuster le positionnement du cercle sur toutes les lettres */
+  width: 100%;
+  border-radius: 50px;
+  transition: width 0.4s ease-in-out;
 }
 
+.button:not(:hover)::before {
+  width: 50px;
+  transition: width 0.4s ease-in-out, border-radius 0.3s ease-in-out; /* Transition plus lente après le survol */
+  border-radius: 50px; /* La valeur initiale de border-radius */
+}
+
+@media screen and (max-width: 1200px) {
+  .button {
+    font-size: 22px;
+    margin-left: 0;
+  }
+  .button::before {
+    top: 45%;
+  }
+}
+
+@media screen and (max-width: 860px) {
+  .button {
+    font-size: 18px;
+  }
+
+  .button::before {
+    top: 40%;
+    width: 40px;
+    height: 40px;
+  }
+
+  .button:not(:hover)::before {
+    width: 40px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .button {
+    margin-top: 18px;
+    margin-bottom: 5px;
+  }
+}

@@ -8,18 +8,29 @@
 }
 
 .input_field_message {
-    height: 150px;
+    height: 140px;
 }
 
 .input_field:focus, .input_field_message:focus {
     outline-style: none;
 }
 
+.input_field::placeholder, .input_field_message::placeholder {
+    opacity: 70%;
+}
+
 .input_field_button {
     padding: 8px 12px;
     font-size: 20px;
-    background-color: rgb(255, 255, 255, 100%); /* Remplacez cela par votre couleur préférée */
-    color: rgb(43, 108, 130); /* Couleur du texte du bouton, remplacez-le par la couleur de texte souhaitée */
-    border: none; /* Supprime la bordure du bouton */
-    cursor: pointer; /* Ajoute un curseur pointer au survol */
+    background-color: rgb(255, 255, 255, 100%); 
+    color: rgb(43, 108, 130); 
+    border: none; 
+    cursor: pointer; 
+    border-radius: 5px;
+}
+
+@media screen and (max-width: 700px) {
+    .input_field, .input_field_message {
+        font-size: 18px;
+    }
 }
