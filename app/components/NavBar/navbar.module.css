@@ -44,18 +44,62 @@
     margin-top: 12px;
     content: "";
     background: #ffffff;
-    width: 161px;
+    width: 141px;
     height: 1px;
     display: block;
 }
 
 .menu a {
     font-weight: bold;
-    font-size: 34px;
+    font-size: 30px;
     letter-spacing: 2px;
     margin-top: 18px;
 }
 
 .menu_closed {
     transform: translateX(100%);
+}
+
+@media screen and (max-width: 1100px) {
+    .menu {
+        width: 180px;
+        min-width: 21%;
+        padding-left: 45px;
+    }
+
+    .menu_title::after {
+        width: 101px;
+    }
+
+    .menu a {
+        font-size: 25px;
+    }
+
+    .header_author_name {
+        font-size: 25px;
+    }
+}
+
+@media screen and (max-width: 776px) {
+    .menu {
+        padding-left: 40px;
+    }
+
+    .menu_title::after {
+        width: 101px;
+    }
+
+    .menu a {
+        font-size: 20px;
+    }
+
+    .header_author_name {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .header_author_name {
+        font-size: 19px;
+    }
 }

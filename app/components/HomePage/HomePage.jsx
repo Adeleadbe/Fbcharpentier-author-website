@@ -4,7 +4,6 @@ import { useEffect, useRef } from "react"
 import anime from "animejs"
 import styles from "./home-page.module.css"
 import { VideoComponent } from "./VideoComponent"
-import Image from "next/image"
 
 export default function HomePage() {
     const textRef = useRef(null)

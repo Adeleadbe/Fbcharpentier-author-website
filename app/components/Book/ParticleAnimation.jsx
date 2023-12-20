@@ -9,7 +9,7 @@ const ParticleAnimation = () => {
         const numParticles = 170 // Nombre de particules
         // Crée un conteneur pour les particules
         const particleContainer = document.createElement("div")
-        particleContainer.className = styles["particle-container"] // Utilisez le style importé
+        particleContainer.className = styles["particle_container"] // Utilisez le style importé
         document.body.appendChild(particleContainer)
 
         const startAnimation = () => {
