@@ -21,16 +21,17 @@
 
 .input_field_button {
     padding: 8px 12px;
-    font-size: 20px;
     background-color: rgb(255, 255, 255, 100%); 
     color: rgb(43, 108, 130); 
     border: none; 
     cursor: pointer; 
     border-radius: 5px;
+    font-size: 16px;
 }
 
 @media screen and (max-width: 700px) {
     .input_field, .input_field_message {
-        font-size: 18px;
+        font-size: 16px;
+        margin-bottom: 0;
     }
 }

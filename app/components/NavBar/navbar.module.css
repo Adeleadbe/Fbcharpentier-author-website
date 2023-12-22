@@ -81,6 +81,15 @@
 }
 
 @media screen and (max-width: 776px) {
+    .header {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .header_author_name {
+        font-size: 20px;
+    }
+    
     .menu {
         padding-left: 40px;
     }
@@ -93,9 +102,6 @@
         font-size: 20px;
     }
 
-    .header_author_name {
-        font-size: 20px;
-    }
 }
 
 @media screen and (max-width: 450px) {
