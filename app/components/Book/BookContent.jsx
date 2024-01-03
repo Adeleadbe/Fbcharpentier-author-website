@@ -1,14 +1,50 @@
-import styles from "./BookContent.module.css"
-import Button from "../CommonComponents/Button"
-import Image from "next/image"
-import TextAnimation from "./TextAnimation"
-import ImageAnimation from "./ImageAnimation"
-import backgroundLine from "../../../public/images/background_line.svg"
-import backgroundCircle from "../../../public/images/background_circle.svg"
-import predasTitle from "../../../public/images/predas_title.png"
-import coverPredas from "../../../public/images/book_predas.png"
+"use client"
+
+import { useEffect, useRef, useState } from 'react';
+import anime from 'animejs';
+import styles from "./BookContent.module.css";
+import Button from "../CommonComponents/Button";
+import Image from "next/image";
+import TextAnimation from "./TextAnimation";
+import ImageAnimation from "./ImageAnimation";
+import backgroundLine from "../../../public/images/background_line.svg";
+import predasTitle from "../../../public/images/predas_title.png";
+import coverPredas from "../../../public/images/cover_predas.png";
+import { Footer } from "../Footer/Footer"
 
 export default function BookContent({ detail, links, reviews }) {
+    const coverRef = useRef(null);
+    const [animationPlayed, setAnimationPlayed] = useState(false);
+
+    useEffect(() => {
+        const coverAnimation = anime({
+            targets: coverRef.current,
+            translateX: ['100%', 0],
+            easing: 'easeInOutQuad',
+            opacity: [0, 1],
+            duration: 1000,
+            delay: 100,
+            autoplay: false,
+        });
+
+        const handleScroll = () => {
+            const scrollPosition = window.scrollY;
+            const windowHeight = window.innerHeight;
+            const triggerPosition = coverRef.current.getBoundingClientRect().top + scrollPosition - windowHeight / 2;
+
+            if (scrollPosition > triggerPosition && !animationPlayed) {
+                coverAnimation.play();
+                setAnimationPlayed(true);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, [animationPlayed]);
+
     return (
         <>
             <div className={styles.main_background}></div>
@@ -44,14 +80,12 @@ export default function BookContent({ detail, links, reviews }) {
                         </div>
                     </div>
                 </div>
-                <div className={styles.svg_container_circle}>
-                    <Image src={backgroundCircle} alt="Rond décoratif" fill sizes="100vw" />
-                </div>
                 <div className={styles.aside_picture}>
-                    <Image src={coverPredas} alt="Couverture du livre" width={430} height={625} sizes="100vw" quality={100} />
+                    <Image ref={coverRef} src={coverPredas} alt="Couverture du livre" width={430} height={605} sizes="100vw" quality={100} />
                     <p>{detail.authorNote}</p>
                 </div>
             </aside>
+           
         </>
-    )
+    );
 }

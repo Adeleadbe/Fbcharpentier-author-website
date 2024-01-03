@@ -46,10 +46,9 @@
   border-radius: 50px; /* La valeur initiale de border-radius */
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1160px) {
   .button {
     font-size: 22px;
-    margin-left: 0;
   }
 
   .button::before {
@@ -57,10 +56,20 @@
   }
 }
 
-@media screen and (max-width: 870px) {
+@media screen and (max-width: 890px) {
   .button {
     font-size: 20px;
     margin-right: 12px;
+    margin-left: 14px;
+    padding-left: 12px;
+  }
+
+  .button::before {
+    height: 45px;
+  }
+  
+  .button:not(:hover)::before {
+    width: 45px;
   }
 }
 
@@ -69,22 +78,22 @@
     margin-top: 18px;
     margin-bottom: 5px;
     margin-right: 20px;
+    margin-left: 0px;
   }
 }
 
 @media screen and (max-width: 450px) {
   .button {
     font-size: 17px;
-    padding-top: 18px;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-top: 19px;
+    padding-left: 11px;
   }
 
   .button::before {
-    height: 30px; /* Ajustez la hauteur du cercle */
+    height: 38px;
   }
 
   .button:not(:hover)::before {
-    width: 30px;
+    width: 38px;
   }
 }

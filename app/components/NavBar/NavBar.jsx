@@ -1,32 +1,35 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import styles from "./navbar.module.css"
-import { AnimatePresence, motion } from "framer-motion"
-import { menuSlide, linkSlide } from "./anim"
-import useIconClickState from "./use-icon-click-state"
-import React, { useState, useEffect } from "react"
+import Link from "next/link";
+import styles from "./navbar.module.css";
+import { AnimatePresence, motion } from "framer-motion";
+import { menuSlide, linkSlide } from "./anim";
+import useIconClickState from "./use-icon-click-state";
+import React, { useState, useEffect } from "react";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 
 export const NavBar = () => {
-    const [isIconClicked, handleIconClicked] = useIconClickState(false)
-    const [windowWidth, setWindowWidth] = useState(window.innerWidth)
+    const [isIconClicked, handleIconClicked] = useIconClickState(false);
+    const [windowWidth, setWindowWidth] = useState(typeof window !== "undefined" ? window.innerWidth : 0);
+    const [isClient, setIsClient] = useState(false);
 
     useEffect(() => {
+        setIsClient(true);
+
         const handleResize = () => {
-            setWindowWidth(window.innerWidth);
-        }
+            setWindowWidth(typeof window !== "undefined" ? window.innerWidth : 0);
+        };
 
-        // Ajouter un écouteur d'événements pour suivre les changements de taille de la fenêtre
-        window.addEventListener("resize", handleResize)
+        if (typeof window !== "undefined") {
+            window.addEventListener("resize", handleResize);
 
-        // Nettoyer l'écouteur d'événements lors du démontage du composant
-        return () => {
-            window.removeEventListener("resize", handleResize)
+            return () => {
+                window.removeEventListener("resize", handleResize);
+            };
         }
-    }, [])
+    }, []);
 
     const closeMenu = () => {
         if (isIconClicked) {
@@ -34,14 +37,16 @@ export const NavBar = () => {
         }
     };
 
-    let imageSize
+    let imageSize;
 
-    if (windowWidth < 450) {
-        imageSize = "sm"
-    } else if (windowWidth < 776) {
-        imageSize = "2sm"
-    } else {
-        imageSize = "lg"
+    if (isClient) {
+        if (windowWidth < 450) {
+            imageSize = "sm";
+        } else if (windowWidth < 776) {
+            imageSize = "1x";
+        } else {
+            imageSize = "lg";
+        }
     }
 
     const links = [
@@ -49,7 +54,8 @@ export const NavBar = () => {
         { href: "/book", text: "Livre", delay: 0.1 },
         { href: "/about", text: "L'autrice", delay: 0.15 },
         { href: "/contact", text: "Contact", delay: 0.25 },
-    ]
+    ];
+
     return (
         <header className={styles.header}>
             <div className={styles.header_author_name}>
@@ -75,5 +81,5 @@ export const NavBar = () => {
                 <FontAwesomeIcon icon={isIconClicked ? faTimes : faBars} size={imageSize} />
             </div>
         </header>
-    )
-}
+    );
+};
