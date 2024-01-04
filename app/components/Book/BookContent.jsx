@@ -1,49 +1,49 @@
 "use client"
 
-import { useEffect, useRef, useState } from 'react';
-import anime from 'animejs';
-import styles from "./BookContent.module.css";
-import Button from "../CommonComponents/Button";
-import Image from "next/image";
-import TextAnimation from "./TextAnimation";
-import ImageAnimation from "./ImageAnimation";
-import backgroundLine from "../../../public/images/background_line.svg";
-import predasTitle from "../../../public/images/predas_title.png";
-import coverPredas from "../../../public/images/cover_predas.png";
+import { useEffect, useRef, useState } from "react"
+import anime from "animejs"
+import styles from "./BookContent.module.css"
+import Button from "../CommonComponents/Button"
+import Image from "next/image"
+import TextAnimation from "./TextAnimation"
+import ImageAnimation from "./ImageAnimation"
+import backgroundLine from "../../../public/images/background_line.svg"
+import predasTitle from "../../../public/images/predas_title.png"
+import coverPredas from "../../../public/images/cover_predas.png"
 import { Footer } from "../Footer/Footer"
 
 export default function BookContent({ detail, links, reviews }) {
-    const coverRef = useRef(null);
-    const [animationPlayed, setAnimationPlayed] = useState(false);
+    const coverRef = useRef(null)
+    const [animationPlayed, setAnimationPlayed] = useState(false)
 
     useEffect(() => {
         const coverAnimation = anime({
             targets: coverRef.current,
-            translateX: ['100%', 0],
-            easing: 'easeInOutQuad',
+            translateX: ["100%", 0],
+            easing: "easeInOutQuad",
             opacity: [0, 1],
             duration: 1000,
             delay: 100,
             autoplay: false,
-        });
+        })
 
         const handleScroll = () => {
-            const scrollPosition = window.scrollY;
-            const windowHeight = window.innerHeight;
-            const triggerPosition = coverRef.current.getBoundingClientRect().top + scrollPosition - windowHeight / 2;
+            const scrollPosition = window.scrollY
+            const windowHeight = window.innerHeight
+            const triggerPosition = coverRef.current.getBoundingClientRect().top + scrollPosition - windowHeight / 2
 
             if (scrollPosition > triggerPosition && !animationPlayed) {
-                coverAnimation.play();
-                setAnimationPlayed(true);
+                coverAnimation.play()
+                setAnimationPlayed(true)
             }
-        };
+        }
 
-        window.addEventListener('scroll', handleScroll);
+        window.addEventListener("scroll", handleScroll)
 
         return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, [animationPlayed]);
+            window.removeEventListener("scroll", handleScroll)
+        }
+    }, [animationPlayed])
 
     return (
         <>
@@ -57,7 +57,7 @@ export default function BookContent({ detail, links, reviews }) {
             </div>
 
             <div className={styles.svg_container_line}>
-                <Image src={backgroundLine} alt="Ligne décorative" fill sizes="100vw" style={{ objectFit: "cover"}}/>
+                <Image src={backgroundLine} alt="Ligne décorative" fill sizes="100vw" style={{ objectFit: "cover" }} />
             </div>
 
             <div className={styles.aside_background}></div>
@@ -85,7 +85,6 @@ export default function BookContent({ detail, links, reviews }) {
                     <p>{detail.authorNote}</p>
                 </div>
             </aside>
-           
         </>
-    );
+    )
 }

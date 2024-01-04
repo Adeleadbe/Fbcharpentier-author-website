@@ -308,8 +308,10 @@
         font-size: 17px;
     }
 
-    .aside_content_order_button a {
+    .aside_content_order_button a, 
+    .aside_content_review_button a  {
         margin-right: 0px;
+        margin-left: 10px;
     }
 
     .aside_picture {
@@ -318,7 +320,7 @@
 
     .aside_picture img {
         width: 245px;
-        height: 340px;
+        height: 355px;
     }
 
     .aside_picture p {
