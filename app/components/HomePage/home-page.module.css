@@ -7,7 +7,7 @@
   height: 10vw;
   min-height: 125px;
   position: relative;
-  top: 90px;
+  top: 190px;
 }
 
 .container_content_image {
@@ -26,7 +26,7 @@
 @media screen and (max-width: 776px) {
   .container_content {
     height: 18vw;
-    min-height: 70px;
+    min-height: 100px;
   }
 
   .container_content_image {
@@ -36,5 +36,7 @@
 }
 
 @media screen and (max-width: 450px) {
-
+  .container_content {
+    min-height: 70px;
+  }
 }
