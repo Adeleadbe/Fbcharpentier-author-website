@@ -1,14 +1,10 @@
-.video_container {
+.video_element {
   z-index: -1;
   position: absolute;
   top: 0;
-  height: 100%;
   overflow: hidden;
-}
-
-.video_element {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
   filter: contrast(0.9) grayscale(0.2);
 }

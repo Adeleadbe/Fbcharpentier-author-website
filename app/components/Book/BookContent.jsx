@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react"
 import anime from "animejs"
 import styles from "./BookContent.module.css"
-import Button from "../CommonComponents/Button"
+import Button from "../CommonComponents/ButtonBook"
 import Image from "next/image"
 import TextAnimation from "./TextAnimation"
 import ImageAnimation from "./ImageAnimation"

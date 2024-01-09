@@ -1,8 +1,40 @@
-.container_content {
-  position: relative;
-  margin: auto;
-  height: 50vh;
-  width: 100vh;
+.container {
+  width: 100%;
+  height: 80vh;
 }
 
+.container_content {
+  height: 10vw;
+  min-height: 125px;
+  position: relative;
+  top: 90px;
+}
 
+.container_content_image {
+  margin: auto;
+  width: 100%;
+  height: 80%;
+}
+
+.container_content_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90%; /* Ajustez la hauteur selon vos besoins */
+}
+
+@media screen and (max-width: 776px) {
+  .container_content {
+    height: 18vw;
+    min-height: 70px;
+  }
+
+  .container_content_image {
+    width: 80%;
+    height: 75%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+
+}
