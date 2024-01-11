@@ -1,9 +1,8 @@
 .main_book {
     padding-bottom: 55px;
-    position: absolute;
-    top: 0;
     z-index: -1;
-    padding-top: 100px;
+    padding-top: 40px;
+    min-height: 100vh;
 }
 
 .book_content_wrapper {

@@ -49,6 +49,7 @@
 @media screen and (max-width: 1160px) {
   .button {
     font-size: 22px;
+    margin-bottom: 25px;
   }
 
   .button::before {

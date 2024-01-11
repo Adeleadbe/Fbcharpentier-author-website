@@ -1,6 +1,7 @@
 import BookContent from "../components/Book/BookContent"
 import styles from "./page.module.css"
 import ParticleAnimation from "../components/Book/ParticleAnimation"
+import { Footer } from "../components/Footer/Footer"
 
 export default function Book() {
     const bookDetails = {
@@ -20,17 +21,20 @@ export default function Book() {
     ]
 
     const bookReviews = [
-        { text: "Booknode", url: ""}, 
-        { text: "Goodreads", url: ""},
+        { text: "Booknode", url: "" },
+        { text: "Goodreads", url: "" },
     ]
 
     return (
-        <main className={styles.main_book}>
-            <div className={styles.main_background}></div>
-            <ParticleAnimation />
-            <div className={styles.book_content_wrapper}>
-                <BookContent detail={bookDetails} links={bookLinks} reviews={bookReviews} />
-            </div>
-        </main>
+        <>
+            <main className={styles.main_book}>
+                <div className={styles.main_background}></div>
+                <ParticleAnimation />
+                <div className={styles.book_content_wrapper}>
+                    <BookContent detail={bookDetails} links={bookLinks} reviews={bookReviews} />
+                </div>
+            </main>
+            <Footer />
+        </>
     )
 }
