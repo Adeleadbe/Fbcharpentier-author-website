@@ -4,7 +4,7 @@ export const Footer = () => {
     return (
       <footer className={styles.footer}>
         <div className={styles.container}>
-          <p>&copy; 2023 Nom de lécrivain. Tous droits réservés.</p>
+          <p>&copy; 2023 F.B Charpentier. Tous droits réservés. – Mentions légales – Politique de confidentialité </p>
         </div>
       </footer>
     );
