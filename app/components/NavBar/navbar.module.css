@@ -108,4 +108,8 @@
     .header_author_name {
         font-size: 19px;
     }
+
+    .menu {
+        width: 160px;
+    }
 }

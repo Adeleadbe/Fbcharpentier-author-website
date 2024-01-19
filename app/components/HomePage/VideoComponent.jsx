@@ -1,4 +1,4 @@
-import styles from "./video-component.module.css"
+import styles from "./VideoComponent.module.css"
 
 export const VideoComponent = () => {
     return (

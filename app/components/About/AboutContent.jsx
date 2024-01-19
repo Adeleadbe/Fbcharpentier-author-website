@@ -6,8 +6,8 @@ export default function AboutContent() {
     return (
         <div className={lora.className}>
             <div className={styles.nav_cross}></div>
-             <div className={styles.svg_container_author}>
-                <Image src="/images/background_author_line.png" alt="Ligne décorative" width={470} height={402} className={styles.svg_container_author_line} sizes='100vw'/>
+             <div className={styles.png_container_author}>
+                <Image src="/images/background_author_line.png" alt="Ligne décorative" width={470} height={402} className={styles.png_container_author_line} sizes='100vw'/>
             </div> 
             <section className={styles.author_presentation}>
                 <div className={styles.author_presentation_image}>

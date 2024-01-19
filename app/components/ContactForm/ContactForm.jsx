@@ -5,7 +5,8 @@ import { useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from "yup"
 import { submitFormData } from "./SubmitFormData"
-import styles from "./contact_form.module.css"
+import styles from "./ContactForm.module.css"
+import DOMPurify from "dompurify";
 
 const schema = yup.object().shape({
     lastName: yup.string().required("Le prénom est requis"),
@@ -24,8 +25,14 @@ const ContactForm = () => {
 
      const onSubmit = async (data) => {
     try {
-      // Appeler la fonction qui gère l'envoi des données à l'API
-      await submitFormData(data);
+      // Clean the data before sending it to the API to prevent XSS attacks
+            const sanitizedData = {
+                lastName: DOMPurify.sanitize(data.lastName),
+                email: DOMPurify.sanitize(data.email),
+                message: DOMPurify.sanitize(data.message),
+            };
+
+            await submitFormData(sanitizedData);
     } catch (error) {
       console.error("Erreur lors de l'envoi du formulaire:", error);
       // Gérer les erreurs liées à la requête ici

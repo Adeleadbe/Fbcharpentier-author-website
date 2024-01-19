@@ -8,7 +8,7 @@
     border-radius: 50%;
 }
 
-.svg_container_author {
+.png_container_author {
     position: absolute;
     left: 0;
     top: 0;
@@ -19,7 +19,7 @@
     overflow: hidden;
 }
 
-.svg_container_author_line {
+.png_container_author_line {
     width: 100%; /* Ajustez la largeur de l'image à 100% */
     height: auto; /* Ajustez la hauteur automatiquement pour conserver les proportions */
     object-fit: cover;

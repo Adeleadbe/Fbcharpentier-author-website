@@ -6,6 +6,7 @@
     height: 60px;
     position: absolute;
     bottom: 0;
+    z-index: 0;
   }
   
   .container {
@@ -14,7 +15,26 @@
   }
   
   .footer p {
-    margin: 0;
+    margin: auto;
     font-size: 14px;
     color: #666;
+    width: 90%;
+  }
+
+  @media screen and (max-width: 776px) {
+    .footer {
+      padding: 24px 0;
+      height: 70px;
+    }
+  }
+
+  @media screen and (max-width: 607px) {
+    .footer {
+      padding: 21px 0;
+    }
+
+    .footer p {
+      font-size: 12px;
+      line-height: 20px;
+    }
   }

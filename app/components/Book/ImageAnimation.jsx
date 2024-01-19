@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react"
 import anime from "animejs"
 import Image from "next/image"
+import styles from "./ImageAnimation.module.css"
 
 const ImageAnimation = ({ src, alt, width, height, delay }) => {
     const imageRef = useRef(null)
@@ -21,7 +22,7 @@ const ImageAnimation = ({ src, alt, width, height, delay }) => {
     }, [delay])
 
     return (
-        <div ref={imageRef} className="image_animation" style={{ opacity: 0 }}>
+        <div ref={imageRef} className={styles.image_animation} style={{ opacity: 0 }}>
             <Image src={src} alt={alt} width={width} height={height} quality={100} />
         </div>
     )

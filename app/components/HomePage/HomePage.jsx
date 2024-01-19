@@ -1,6 +1,6 @@
 "use client"
 
-import styles from "./home-page.module.css"
+import styles from "./HomePage.module.css"
 import { VideoComponent } from "./VideoComponent"
 import Image from "next/image"
 import titleHomePage from "../../../public/images/title_homepage.png"

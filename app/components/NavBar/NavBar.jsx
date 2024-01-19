@@ -1,10 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import styles from "./navbar.module.css";
+import styles from "./NavBar.module.css";
 import { AnimatePresence, motion } from "framer-motion";
-import { menuSlide, linkSlide } from "./anim";
-import useIconClickState from "./use-icon-click-state";
+import { menuSlide, linkSlide } from "./Anim";
+import useIconClickState from "./UseIconClickState";
 import React, { useState, useEffect } from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
