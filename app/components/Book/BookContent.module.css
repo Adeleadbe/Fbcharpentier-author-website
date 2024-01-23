@@ -20,7 +20,7 @@
 }
 
 .main_content p {
-    width: 35%;
+    width: 40%;
     min-width: 530px;
     margin-top: 28px;
     font-size: 21px;
@@ -42,16 +42,15 @@
 
 .aside_background {
     position: absolute;
-    top: 56%;
+    top: 54%;
     right: 0;
     width: 100%;
-    height: 42%;
+    height: 45%;
     background-color: #82C28A;
     z-index: -1;
 }
 
 .aside {
-    margin-top: 30px;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -67,9 +66,9 @@
     flex-direction: column;
     justify-content: center;
     margin-left: 35px;
-    margin-right: 35px;
     padding-bottom: 140px;
     padding-top: 60px;
+    position: relative;
 }
 
 .aside_content_order_button {
@@ -120,11 +119,10 @@
 }
 
 .aside_picture {
-    position: absolute;
-    width: 40%;
-    right: 1px;
-    bottom: 80px;
-    margin-right: 25px;
+    position: relative;
+    height: 38em;
+    bottom: 20px;
+    right: min(5vw, 120px);
 }
 
 .aside_picture p {
@@ -136,25 +134,50 @@
 }
 
 .aside_picture img {
-    z-index: 10;
+    z-index: 1;
+    position: absolute;
+}
+
+.aside_picture img:first-child {
+    right: 10px;
+    bottom: 55px;
+}
+
+.aside_picture img:last-child {
+    right: 0;
+    top: 0;
 }
 
 .svg_container_line {
     position: relative;
     width: 100%;
-    height: 290px;
+    height: 306px;
     z-index: 0;
+}
+
+.aside_section_note {
+    width: 390px;
+    margin-right: 85px;
+    margin-bottom: 55px;
+}
+
+.aside_section_note p {
+    font-size: 18px;
+    line-height: 21px;
+    font-style: italic;
 }
 
 @media screen and (max-width: 1160px) {
     .aside {
         margin-top: 0;
+        padding-top: 0;
     }
 
     .aside_content {
         width: 80%;
         margin-right: 0;
         margin-left: 15px;
+        padding-top: 0;
     }
 
     .aside_content_order p,
@@ -172,19 +195,35 @@
         margin-right: 0;
     }
 
+    .aside_picture {
+        height: 33em;
+    }
+
     .aside_picture p {
         margin-top: -20px;
         font-size: 16px;
         width: 310px;
     }
 
-    .aside_picture {
-        width: 39%;
+    .aside_picture img:first-child {
+        bottom: 40px;
+        width: 386px;
+        height: 386px;
     }
+    
+    .aside_picture img:last-child {
+        top: 10px;
+        width: 390px;
+        height: 560px;
+    }    
 
-    .aside_picture img {
-        width: 350px;
-        height: 490px;
+    .aside_section_note {
+        width: 380px;
+        margin-right: 60px;
+    }
+    
+    .aside_section_note p {
+        font-size: 17px;
     }
 }
 
@@ -206,9 +245,29 @@
         margin-left: 25px;
     }
 
-    .aside_picture img {
-        width: 300px;
-        height: 435px;
+    .aside_picture {
+        height: 30em;
+    }
+
+    .aside_picture img:first-child {
+        bottom: 30px;
+        width: 336px;
+        height: 336px;
+    }
+    
+    .aside_picture img:last-child {
+        top: 10px;
+        width: 355px;
+        height: 500px;
+    }    
+
+    .aside_section_note {
+        width: 340px;
+        margin-right: 38px;
+    }
+    
+    .aside_section_note p {
+        font-size: 16px;
     }
 }
 
@@ -219,8 +278,8 @@
     }
 
     .aside_background {
-        height: 53%;
-        top: 44%;
+        height: 58%;
+        top: 40%;
     }
 
     .aside_content {
@@ -284,6 +343,7 @@
         width: 100%;
         margin-right: 0;
     }
+
 
     .aside_picture p {
         margin: auto;

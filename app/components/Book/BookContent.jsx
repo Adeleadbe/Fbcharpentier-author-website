@@ -9,51 +9,66 @@ import TextAnimation from "./TextAnimation"
 import ImageAnimation from "./ImageAnimation"
 import backgroundLine from "../../../public/images/background_line.svg"
 import predasTitle from "../../../public/images/predas_title.png"
-import coverPredas from "../../../public/images/cover_predas.png"
+import coverPredas from "../../../public/images/book_predas.png"
+import hoverAnimation from "./HoverAnimation"
+import backgroundCircle from "../../../public/images/background_circle.svg"
 import { Footer } from "../Footer/Footer"
 
 export default function BookContent({ detail, links, reviews }) {
     const coverRef = useRef(null)
-    const [animationPlayed, setAnimationPlayed] = useState(false)
 
-    useEffect(() => {
-        const coverAnimation = anime({
-            targets: coverRef.current,
-            translateX: ["100%", 0],
-            easing: "easeInOutQuad",
-            opacity: [0, 1],
-            duration: 1000,
-            delay: 100,
-            autoplay: false,
-        })
+    const hoverCover = hoverAnimation(coverRef, {
+        x: 10,
+        y: -10,
+        z: 5,
+    })
 
-        const handleScroll = () => {
-            const scrollPosition = window.scrollY
-            const windowHeight = window.innerHeight
-            const triggerPosition = coverRef.current.getBoundingClientRect().top + scrollPosition - windowHeight / 2
+    const imageHover = hoverAnimation(coverRef, {
+        x: 15,
+        y: -5,
+        z: 11,
+    })
+    // const coverRef = useRef(null)
+    // const [animationPlayed, setAnimationPlayed] = useState(false)
 
-            if (scrollPosition > triggerPosition && !animationPlayed) {
-                coverAnimation.play()
-                setAnimationPlayed(true)
-            }
-        }
+    // useEffect(() => {
+    //     const coverAnimation = anime({
+    //         targets: coverRef.current,
+    //         translateX: ["100%", 0],
+    //         easing: "easeInOutQuad",
+    //         opacity: [0, 1],
+    //         duration: 1000,
+    //         delay: 100,
+    //         autoplay: false,
+    //     })
 
-        window.addEventListener("scroll", handleScroll)
+    //     const handleScroll = () => {
+    //         const scrollPosition = window.scrollY
+    //         const windowHeight = window.innerHeight
+    //         const triggerPosition = coverRef.current.getBoundingClientRect().top + scrollPosition - windowHeight / 2
 
-        return () => {
-            window.removeEventListener("scroll", handleScroll)
-        }
-    }, [animationPlayed])
+    //         if (scrollPosition > triggerPosition && !animationPlayed) {
+    //             coverAnimation.play()
+    //             setAnimationPlayed(true)
+    //         }
+    //     }
+
+    //     window.addEventListener("scroll", handleScroll)
+
+    //     return () => {
+    //         window.removeEventListener("scroll", handleScroll)
+    //     }
+    // }, [animationPlayed])
 
     return (
         <>
             <div className={styles.main_background}></div>
             <div className={styles.main_content}>
-                <ImageAnimation src={predasTitle} alt="Titre de la couverture du livre" width={275} height={191} quality={100} delay={500} />
-                <TextAnimation text={detail.summary_first_paragraph} delay={3000} />
-                <TextAnimation text={detail.summary_second_paragraph} delay={5500} />
-                <TextAnimation text={detail.summary_third_paragraph} delay={8000} />
-                <TextAnimation text={detail.summary_fourth_paragraph} delay={10500} />
+                <ImageAnimation src={predasTitle} alt="Titre de la couverture du livre" width={275} height={191} quality={100} delay={100} />
+                <TextAnimation text={detail.summary_first_paragraph} delay={1500} />
+                <TextAnimation text={detail.summary_second_paragraph} delay={3000} />
+                <TextAnimation text={detail.summary_third_paragraph} delay={4500} />
+                <TextAnimation text={detail.summary_fourth_paragraph} delay={6000} />
             </div>
 
             <div className={styles.svg_container_line}>
@@ -61,7 +76,7 @@ export default function BookContent({ detail, links, reviews }) {
             </div>
 
             <div className={styles.aside_background}></div>
-            <aside className={styles.aside}>
+            <aside className={styles.aside} ref={coverRef}>
                 <div className={styles.aside_content}>
                     <div className={styles.aside_content_order}>
                         <p>Je commande : </p>
@@ -80,9 +95,18 @@ export default function BookContent({ detail, links, reviews }) {
                         </div>
                     </div>
                 </div>
-                <div className={styles.aside_picture}>
-                    <Image ref={coverRef} src={coverPredas} alt="Couverture du livre" width={430} height={605} sizes="100vw" quality={100} />
-                    <p>{detail.authorNote}</p>
+                <div className={styles.aside_content_picture}>
+                    <div className={styles.aside_picture} style={{transform: hoverCover.transform}}>
+                        <Image
+                            src={backgroundCircle}
+                            alt="Background Circle"
+                            width={440} height={440} sizes="100vw" quality={100}
+                        />
+                        <Image src={coverPredas} alt="Couverture du livre" width={440} height={635} sizes="100vw" quality={100} style={{transform: imageHover.transform }} />
+                    </div>
+                    <div className={styles.aside_section_note}>
+                        <p>{detail.authorNote}</p>
+                    </div>
                 </div>
             </aside>
         </>
