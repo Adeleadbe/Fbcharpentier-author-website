@@ -65,3 +65,16 @@
         margin-bottom: 0;
     }
 }
+
+@media screen and (min-width: 1600px) {
+    .input_field, .input_field_message {
+        font-size: 24px;
+        margin-bottom: 0;
+    }
+
+    .input_field_button {
+        padding: 10px 14px;
+        font-size: 19px;
+        margin-top: 15px;
+    }
+}

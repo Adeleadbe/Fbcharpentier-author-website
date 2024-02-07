@@ -53,3 +53,18 @@
         font-size: 16px;
     }
 }
+
+@media screen and (min-width: 1600px) {
+    .contact {
+        height: 100vh;
+        padding-top: 210px;
+    }
+
+    .contact h1 {
+        font-size: 32px;
+    }
+
+    .contact_content_p {
+        font-size: 24px;
+    }
+}
