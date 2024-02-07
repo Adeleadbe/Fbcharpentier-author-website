@@ -44,6 +44,8 @@ export const NavBar = () => {
             imageSize = "sm";
         } else if (windowWidth < 776) {
             imageSize = "1x";
+        } else if (windowWidth > 1650) {
+            imageSize = "2x";
         } else {
             imageSize = "lg";
         }

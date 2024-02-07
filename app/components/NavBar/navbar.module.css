@@ -113,3 +113,9 @@
         width: 160px;
     }
 }
+
+@media screen and (min-width: 1650px) {
+    .header_author_name {
+        font-size: 39px;
+    }
+  }

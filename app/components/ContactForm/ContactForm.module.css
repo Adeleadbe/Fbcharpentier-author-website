@@ -9,6 +9,7 @@
 
 .input_field_message {
     height: 140px;
+    position: relative;
 }
 
 .input_field:focus, .input_field_message:focus {
@@ -27,6 +28,35 @@
     cursor: pointer; 
     border-radius: 5px;
     font-size: 16px;
+    margin-top: 15px;
+}
+
+.form_message {
+    position: relative;
+}
+
+.character_count {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    color: rgba(53, 53, 53, 0.6);
+    font-size: 13px;
+    top: 112px;
+    right: 15px;
+}
+
+.validation_message {
+    color: rgb(130, 194, 138);
+    background-color: rgb(255, 255, 255, 100%); 
+    border: 2px solid rgb(130, 194, 138);
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 23vw;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 45px;
 }
 
 @media screen and (max-width: 700px) {

@@ -99,3 +99,18 @@
     width: 38px;
   }
 }
+
+@media screen and (min-width: 1600px) {
+  .button {
+    font-size: 34px;
+    padding-top: 13px;
+  }
+
+  .button::before {
+    height: 65px;
+  }
+  
+  .button:not(:hover)::before {
+    width: 65px;
+  }
+}
