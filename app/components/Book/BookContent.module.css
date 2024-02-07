@@ -444,14 +444,14 @@
 
 @media screen and (min-width: 1600px) {
     .main_content img {
-        width: 353px;
-        height: 268px;
+        width: 303px;
+        height: 218px;
         margin-top: 15px;
         margin-bottom: 15px;
     }
 
     .main_content p {
-        font-size: 33px;
+        font-size: 27px;
     }
 
     .svg_container_line {
