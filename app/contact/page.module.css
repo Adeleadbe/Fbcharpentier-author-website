@@ -1,14 +1,22 @@
 .contact {
-    background-color: rgb(132, 194, 140);
     padding-bottom: 55px;
-    position: absolute;
     top: 0;
-    padding-top: 100px;
     width: 100%;
-    height: 120vh;
     display: flex;
     flex-direction: column;
     z-index: 0;
+}
+
+.contact_page {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background-color: rgb(132, 194, 140);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .contact_content {
@@ -55,16 +63,11 @@
 }
 
 @media screen and (min-width: 1600px) {
-    .contact {
-        height: 100vh;
-        padding-top: 210px;
-    }
-
     .contact h1 {
-        font-size: 32px;
+        font-size: 28px;
     }
 
     .contact_content_p {
-        font-size: 24px;
+        font-size: 21px;
     }
 }

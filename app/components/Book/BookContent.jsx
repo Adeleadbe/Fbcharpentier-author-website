@@ -12,7 +12,6 @@ import predasTitle from "../../../public/images/predas_title.png"
 import coverPredas from "../../../public/images/book_predas.png"
 import hoverAnimation from "./HoverAnimation"
 import backgroundCircle from "../../../public/images/background_circle.svg"
-import { Footer } from "../Footer/Footer"
 
 export default function BookContent({ detail, links, reviews }) {
     const coverRef = useRef(null)
