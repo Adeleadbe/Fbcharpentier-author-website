@@ -67,6 +67,10 @@
         font-size: 28px;
     }
 
+    .contact_content {
+        width: 80%;
+    }
+
     .contact_content_p {
         font-size: 21px;
     }
